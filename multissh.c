@@ -16,7 +16,6 @@ int main(int argc, char **argv)
     memset(port, 0, 6);
     int port_str_len = 0;
 
-    printf("%d\n", argc);
     if (argc == 1)
     {
         write(STDOUT_FILENO, "Specify server! exiting...\n", 27);
@@ -71,7 +70,6 @@ int main(int argc, char **argv)
     char *cmd = malloc(cmd_str_len);
     snprintf(cmd, cmd_str_len, "gnome-terminal -e \"sshpass -p %s ssh %s %s\"", pass_, port_str, server);
 
-    //printf(cmd);
     int i = 0;
     for (i; i < count; i++)
     {
