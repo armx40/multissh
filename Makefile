@@ -1,12 +1,12 @@
-default: clean
+default:
 	mkdir build
 	cc multissh.c -o ./build/multissh
 
 clean:
 	rm -r ./build/
 
-clean-link:
+uninstall:
 	sudo rm /usr/bin/multissh
 
 install:
-	sudo ln -s $(shell pwd)/build/multissh /usr/bin/multissh
+	sudo cp $(shell pwd)/build/multissh /usr/bin/multissh
